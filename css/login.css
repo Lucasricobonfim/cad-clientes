@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fundologin {
+    background-color: rgb(11, 129, 197);
+}
+
+.formulario {
+    margin-top: 39vh;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, rgb(11, 129, 197), rgba(52, 23, 184, 0.344));
+
+}
+
+form input {
+    margin: 10px;
+    padding: 10px;
+    display: block;
+    width: 300px;
+}
+
+.btn-entrar {
+    background-color: #1B77DA;
+    width: 325px;
+    text-align: center;
+    margin-left: 10px;
+    padding: 10px;
+
+}
