@@ -12,7 +12,7 @@
 
 <body class="fundo">
     <nav class="navbar navbar" style="background: linear-gradient(to bottom, #9900cc 0%, #0099ff 100%);">
-        <img src="../logo.png" alt="">
+        <img src="../img/logo.png" alt="">
         <a style="color: white;" class="navbar-brand nav-link btn" href="../deslogar.php">
             sair
         </a>
