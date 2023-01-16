@@ -8,4 +8,16 @@ form input{
 .fundo {
     background-color: #0099ff;
 }
+/* tabela clientes */
+
+.tabela {
+    text-align: center;
+    background-color: white;
+}
+
+.tabelapos {
+    width: 70%;
+    margin: auto;
+    margin-top: 120px;
+}
 

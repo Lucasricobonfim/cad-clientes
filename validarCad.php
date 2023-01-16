@@ -11,7 +11,7 @@ $nascimento  = $_POST['nascimento'];
 
 if (!empty($nome) && !empty($cpf_cnpj) && !empty($idade) && !empty($nascimento)) {
     $cad->cadastrar($nome, $cpf_cnpj, $idade, $nascimento);
-    header('Location: pages/cadastro.php');
+    header('Location: pages/clientes.php');
     echo 'deu certo';
 } else {
     header('Location: pages/cadastro.php');

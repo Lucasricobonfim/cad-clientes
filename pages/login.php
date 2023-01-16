@@ -7,4 +7,4 @@
             <input type="submit" class="btn al btn-primary" value="LOGIN">
         </form>
     </div>
-    <?php include("footer.php"); ?>
+<?php include("partials/footer.php"); ?>

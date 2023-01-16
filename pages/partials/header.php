@@ -11,9 +11,22 @@
 </head>
 
 <body class="fundo">
-    <nav class="navbar navbar" style="background: linear-gradient(to bottom, #9900cc 0%, #0099ff 100%);">
+    <nav class="nav navbar" style="background: linear-gradient(to bottom, #9900cc 0%, #0099ff 100%);">
         <img src="../img/logo.png" alt="">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a style="color: #fff;" class="nav-link" href="cadastro.php">Cadastro</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a style="color: #fff;" class="nav-link" href="clientes.php">Clientes</a>
+            </li>
+        </ul>
         <a style="color: white;" class="navbar-brand nav-link btn" href="../deslogar.php">
             sair
         </a>
     </nav>
+    <script>
+        const base = '<?= $base; ?>';
+    </script>
