@@ -4,7 +4,6 @@
 class Clientes
 {
 
-
     public function cadastrar($nome, $cpf_cnpj, $idade, $nascimento)
     {
         global $pdo;
@@ -18,7 +17,8 @@ class Clientes
             '$cpf_cnpj',
              $idade, 
             '$nascimento'
-        )";
+        ) ON CONFLICT ON CONSTRAINT clientes_pk DO NOTHING ";
+            
             $sql = $pdo->prepare($sql);
             $sql->execute();
             $result = $sql->fetchAll(PDO::FETCH_ASSOC);

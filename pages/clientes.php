@@ -8,6 +8,15 @@ include('partials/header.php');
 require "../Clientes.php";
 
 $Clientes = new Clientes;
+
+
+
+
+
+
+
+
+
 ?>
 <main class="">
     <h2 class="text-center mt-5" style="color: white;">Clientes Cadastrados</h2>
@@ -30,10 +39,10 @@ $Clientes = new Clientes;
                     <tr class="conteudo">
                         <td><a href="editar.php?id=<?= $val["idclientes"] ?>"><i class="bi bi-pen-fill"></i></a></td>
                         <td><?= $val["nome"] ?></td>
-                        <td><?= $val["cpf_cnpj"] ?></td>
+                        <td class="formatCpf"><?= $val["cpf_cnpj"] ?></td>
                         <td><?= $val["idade"] ?></td>
-                        <td><?= $val["nascimento"] ?></td>
-                        <td><a onclick="javascript: if (confirm('Você realmente deseja excluir esta registro?'))location.href='../deletarCad.php?idcliente=<?= $val["idclientes"] ?>' " style="color: red;"><i class="bi bi-trash"></i></a></td>
+                        <td class="data"><?= $val["nascimento"] ?></td>
+                        <td><a style="color: red;" onclick="confirmarDelete(<?= $val["idclientes"] ?>)"><i class="bi bi-trash"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -41,5 +50,7 @@ $Clientes = new Clientes;
 
     </div>
 </main>
-<script defer src="../js/clientes.js"></script>
+<script defer src="../js/clientes.js">
+    const idcliente = <?= $val["idclientes"] ?>
+</script>
 <?php include("partials/footer.php"); ?>
