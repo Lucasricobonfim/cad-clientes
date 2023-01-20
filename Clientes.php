@@ -18,7 +18,7 @@ class Clientes
              $idade, 
             '$nascimento'
         ) ON CONFLICT ON CONSTRAINT clientes_pk DO NOTHING ";
-            
+
             $sql = $pdo->prepare($sql);
             $sql->execute();
             $result = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -28,6 +28,24 @@ class Clientes
                 $error->getMessage();
         }
     }
+
+    public function verificarCpf($cpf_cnpj)
+    {
+        global $pdo;
+
+        try {
+            $sql = "SELECT CASE WHEN EXISTS(select 1 from gazin.clientes where cpf_cnpj='$cpf_cnpj') then 1 else 0 end as existecpf ";
+
+            $sql = $pdo->prepare($sql);
+            $sql->execute();
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (Throwable $error) {
+            return 'Falha ao cadastrar o cliente: ' .
+                $error->getMessage();
+        }
+    }
+
 
     public function listar()
     {
@@ -105,9 +123,9 @@ class Clientes
             UPDATE 
                 gazin.clientes
             SET 
-                nome=' " . $nome . " ',cpf_cnpj=' " . $cpf_cnpj . " ',idade='" . $idade . " ', nascimento =' " . $data . " '
+                nome='".$nome ."',cpf_cnpj='".$cpf_cnpj."',idade='".$idade."',nascimento ='".$data."'
             WHERE 
-                idclientes=" . $idcliente . "
+                idclientes=".$idcliente."
             ";
             $sql = $pdo->prepare($sql);
             $sql->execute();

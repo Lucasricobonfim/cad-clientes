@@ -10,10 +10,15 @@ $idade  = $_POST['idade'];
 $nascimento  = $_POST['nascimento'];
 
 
-if (!empty($nome) && !empty($cpf_cnpj) && !empty($idade) && !empty($nascimento) ) {
-    $cad->cadastrar($nome, $cpf_cnpj, $idade, $nascimento);
-    header("Location: pages/clientes.php");
+$dados = $cad->verificarCpf($cpf_cnpj);
 
-}else{
+if ($dados[0]['existecpf'] == 0) {
+    if (!empty($nome) && !empty($cpf_cnpj) && !empty($idade) && !empty($nascimento)) {
+        $cad->cadastrar($nome, $cpf_cnpj, $idade, $nascimento);
+        header("Location: pages/clientes.php");
+    }else{
     header("Location: pages/cadastro.php");
+    }
+} else {
+    header("Location: pages/cadastro.php?erro=1");
 }

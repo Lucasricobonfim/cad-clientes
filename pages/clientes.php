@@ -3,19 +3,9 @@ require "../Config.php";
 include("../protect.php");
 protect();
 include('partials/header.php');
-
-
 require "../Clientes.php";
 
 $Clientes = new Clientes;
-
-
-
-
-
-
-
-
 
 ?>
 <main class="">
@@ -50,7 +40,5 @@ $Clientes = new Clientes;
 
     </div>
 </main>
-<script defer src="../js/clientes.js">
-    const idcliente = <?= $val["idclientes"] ?>
-</script>
+<script defer src="../js/clientes.js"></script>
 <?php include("partials/footer.php"); ?>
